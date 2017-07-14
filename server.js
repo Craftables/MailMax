@@ -1,6 +1,6 @@
 var express = require('express');
 const util = require('util')
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
 
@@ -9,11 +9,11 @@ var accountSid = 'AC552ec788b83cba4b91ed340673c8e39e';
 var authToken = "c816ff4f038ce4b56611993328b01722";
 var client = require('twilio')(accountSid, authToken);
 
-
+//Hey Trey! How could I console.log the subject line of the email? or recipient.
 
 var corsOptions = {
-  // origin: /^[^.\s]+\.mixmax\.com$/,
-  // credentials: true
+  origin: /^[^.\s]+\.mixmax\.com$/,
+   credentials: true
 };
 
 app.get('/typeahead', cors(corsOptions), require('./api/typeahead'));
